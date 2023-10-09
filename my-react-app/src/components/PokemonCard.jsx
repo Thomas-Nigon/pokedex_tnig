@@ -1,12 +1,26 @@
 function PokemonCard() {
+  const PokemonList = [
+    {
+      name: "bulbasaur",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    },
+    {
+      name: "mew",
+    },
+  ];
+  let Pokemon = PokemonList[0];
   return (
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-        alt="a pokemon picture - balbasaur"
-      />
-      <figcaption>bulbasaur</figcaption>
-    </figure>
+    <>
+      {Pokemon.imgSrc ? (
+        <figure>
+          <img src={Pokemon.imgSrc} alt="a pokemon picture" />
+          <figcaption>{Pokemon.name}</figcaption>
+        </figure>
+      ) : (
+        "Dommage"
+      )}
+    </>
   );
 }
 
