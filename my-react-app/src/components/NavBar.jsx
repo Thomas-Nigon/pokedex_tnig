@@ -26,6 +26,19 @@ function Navbar(props) {
 /* Navbar.prototype = {
   setIndex: PropTypes.shape({
     setIndex: PropTypes.number.isRequired,
+    pokemonIndex: PropTypes.number.isRequired,
+    pokemonList: PropTypes.array.isRequired,
+
   }),
 }; */
+Navbar.propTypes = {
+  setIndex: PropTypes.func.isRequired, // setIndex should be a function and is required
+  pokemonIndex: PropTypes.number.isRequired, // pokemonIndex should be a number and is required
+  pokemonList: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string,
+    })
+  ).isRequired, // pokemonList should be an array of objects with name (string) and imgSrc (string, optional) properties and is required
+};
 export default Navbar;
