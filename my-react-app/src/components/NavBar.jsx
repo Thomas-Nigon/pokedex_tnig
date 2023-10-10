@@ -1,20 +1,31 @@
+/* import { useState } from "react"; */
+import PropTypes from "prop-types"; // Import PropTypes
+
 function Navbar(props) {
-  const [pokemonIndex, setCount] = useState(0);
-  console.log(pokemonIndex);
+  console.log("propzer", props);
+  const index = props.pokemonIndex;
+  const list = props.pokemonList;
+  const setIndex = props.setIndex;
+  /*   console.log("set index:", setIndex); */
   const Previous = () => {
-    setCount(pokemonIndex + 1);
+    setIndex(index + 1);
   };
   const Next = () => {
-    setCount(pokemonIndex - 1);
+    setIndex(index - 1);
   };
-  <div>
-    {pokemonIndex > 0 ? <button onClick={Next}>Suivant</button> : null}
-    {pokemonIndex < pokemonList.length - 1 ? (
-      <button onClick={Previous}>Precédent</button>
-    ) : null}
 
-    <PokemonCard Pokemon={pokemonList[pokemonIndex]} />
-  </div>;
+  return (
+    <div>
+      {index > 0 ? <button onClick={Next}>Suivant</button> : null}
+      {index < list.length - 1 ? (
+        <button onClick={Previous}>Precédent</button>
+      ) : null}
+    </div>
+  );
 }
-
+/* Navbar.prototype = {
+  setIndex: PropTypes.shape({
+    setIndex: PropTypes.number.isRequired,
+  }),
+}; */
 export default Navbar;
