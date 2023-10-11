@@ -37,9 +37,9 @@ function App() {
   };
   return (
     <div>
-      {pokemonIndex > 0 ? <button onClick={Next}>Suivant</button> : null}
+      {pokemonIndex > 0 ? <button onClick={Next}>Précédent</button> : null}
       {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={Previous}>Precédent</button>
+        <button onClick={Previous}>Suivant</button>
       ) : null}
 
       <PokemonCard Pokemon={pokemonList[pokemonIndex]} />
