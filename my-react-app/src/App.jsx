@@ -8,6 +8,7 @@ const pokemonList = [
     name: "bulbasaur",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    index: 0,
   },
   {
     name: "charmander",
@@ -29,19 +30,11 @@ const pokemonList = [
   },
 ];
 function App() {
-  const [pokemonIndex, setIndex] = useState(0);
+  const [poke, setIndex] = useState("0");
   return (
     <div>
-      {/* {pokemonIndex > 0 ? <button onClick={Next}>Suivant</button> : null}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={Previous}>Precédent</button>
-      ) : null} }*/}
-      <Navbar
-        setIndex={setIndex}
-        pokemonIndex={pokemonIndex}
-        pokemonList={pokemonList}
-      />
-      <PokemonCard Pokemon={pokemonList[pokemonIndex]} />
+      <Navbar setIndex={setIndex} poke={poke} pokemonList={pokemonList} />
+      <PokemonCard Pokemon={pokemonList[poke]} />
     </div>
   );
 }
