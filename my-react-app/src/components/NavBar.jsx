@@ -6,8 +6,9 @@ function Navbar(props) {
   console.log("propzer", props);
   console.log("list:", pokemonList);
   const handleclick = (pokemon, index) => {
-    console.log(`I clicked: ${pokemon.name}`);
     setIndex(index);
+    console.log("nom du pokemon:", pokemon.name);
+    pokemon.name === "pikachu" ? window.alert("pikapika") : null;
   };
   return (
     <div>
